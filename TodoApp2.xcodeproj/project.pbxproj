@@ -14,6 +14,7 @@
 		BF57A8CB26B7A49800155253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF57A8CA26B7A49800155253 /* Assets.xcassets */; };
 		BF57A8CE26B7A49800155253 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF57A8CD26B7A49800155253 /* Preview Assets.xcassets */; };
 		BF57A8D126B7A49800155253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF57A8CF26B7A49800155253 /* LaunchScreen.storyboard */; };
+		BF57A8D926B7A4A600155253 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF57A8D826B7A4A600155253 /* AddTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BF57A8CD26B7A49800155253 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF57A8D026B7A49800155253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF57A8D226B7A49800155253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF57A8D826B7A4A600155253 /* AddTodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 			children = (
 				BF57A8C126B7A49500155253 /* AppDelegate.swift */,
 				BF57A8C326B7A49500155253 /* SceneDelegate.swift */,
-				BF57A8C526B7A49500155253 /* ContentView.swift */,
+				BF57A8DA26B7A4AE00155253 /* Views */,
 				BF57A8CA26B7A49800155253 /* Assets.xcassets */,
 				BF57A8CF26B7A49800155253 /* LaunchScreen.storyboard */,
 				BF57A8D226B7A49800155253 /* Info.plist */,
@@ -76,6 +78,15 @@
 				BF57A8CD26B7A49800155253 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BF57A8DA26B7A4AE00155253 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF57A8C526B7A49500155253 /* ContentView.swift */,
+				BF57A8D826B7A4A600155253 /* AddTodoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				BF57A8C426B7A49500155253 /* SceneDelegate.swift in Sources */,
 				BF57A8C926B7A49500155253 /* TodoApp2.xcdatamodeld in Sources */,
 				BF57A8C626B7A49500155253 /* ContentView.swift in Sources */,
+				BF57A8D926B7A4A600155253 /* AddTodoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dzhiphop.TodoApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,7 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dzhiphop.TodoApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
