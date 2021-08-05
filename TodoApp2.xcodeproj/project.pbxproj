@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3343B326BB0B8C00AF3569 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3343B226BB0B8C00AF3569 /* EmptyListView.swift */; };
 		BF57A8C226B7A49500155253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF57A8C126B7A49500155253 /* AppDelegate.swift */; };
 		BF57A8C426B7A49500155253 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF57A8C326B7A49500155253 /* SceneDelegate.swift */; };
 		BF57A8C626B7A49500155253 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF57A8C526B7A49500155253 /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF3343B226BB0B8C00AF3569 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		BF57A8BE26B7A49500155253 /* TodoApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF57A8C126B7A49500155253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF57A8C326B7A49500155253 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				BF57A8C526B7A49500155253 /* ContentView.swift */,
 				BF57A8D826B7A4A600155253 /* AddTodoView.swift */,
+				BF3343B226BB0B8C00AF3569 /* EmptyListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				BF57A8C226B7A49500155253 /* AppDelegate.swift in Sources */,
 				BF57A8C426B7A49500155253 /* SceneDelegate.swift in Sources */,
+				BF3343B326BB0B8C00AF3569 /* EmptyListView.swift in Sources */,
 				BF57A8C926B7A49500155253 /* TodoApp2.xcdatamodeld in Sources */,
 				BF57A8C626B7A49500155253 /* ContentView.swift in Sources */,
 				BF57A8D926B7A4A600155253 /* AddTodoView.swift in Sources */,

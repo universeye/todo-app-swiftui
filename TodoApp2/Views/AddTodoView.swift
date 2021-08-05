@@ -24,10 +24,14 @@ struct AddTodoView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Form {
+                VStack(alignment: .leading, spacing: 20 ){
                     //MARK: - Todo Name
                     
                     TextField("Todo", text: $name)
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemFill))
+                        .cornerRadius(9)
+                        .font(.system(size: 24, weight: .bold, design: .default))
                     
                     //MARK: - Todo Priority
                     Picker("Priority", selection: $priority) {
@@ -62,10 +66,18 @@ struct AddTodoView: View {
                         
                     }, label: {
                         Text("Save")
+                            .font(.system(size: 24, weight: .bold, design: .default))
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(9)
                     })
                     
                     
-                }
+                }//: VStack
+                .padding(.horizontal)
+                .padding(.vertical, 30)
                 Spacer()
             } //: VStack
             .navigationBarTitle("New Todo", displayMode: .inline)
@@ -86,6 +98,10 @@ struct AddTodoView: View {
 
 struct AddTodoView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTodoView()
+        Group {
+            AddTodoView()
+            AddTodoView()
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
