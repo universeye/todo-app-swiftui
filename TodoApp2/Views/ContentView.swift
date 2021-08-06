@@ -11,11 +11,22 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var showingAddTodoView: Bool = false
+    @State private var isShowingSettingsView: Bool = false
+    
     
     @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
     
+    @State private var isBreathing: Bool = false
     
+    private var spinAnimation: Animation {
+        Animation
+            .easeInOut(duration: 2)
+//            .speed(0.15)
+            .repeatCount(isBreathing ? .max : 0, autoreverses: true)
+    }
     @State private var selectedTodos = Set<UUID>()
+    
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -42,12 +53,12 @@ struct ContentView: View {
                     trailing:
                         Button(action: {
                             //Show add todo View
-                            self.showingAddTodoView.toggle()
+                            self.isShowingSettingsView.toggle()
                         }, label: {
-                            Image(systemName: "plus")
+                            Image(systemName: "paintbrush")
                         })//: Add Button
-                        .sheet(isPresented: $showingAddTodoView, content: {
-                            AddTodoView().environment(\.managedObjectContext, self.managedObjectContext)
+                        .sheet(isPresented: $isShowingSettingsView, content: {
+                            SettingsView()
                         })
                 )
                 
@@ -56,7 +67,7 @@ struct ContentView: View {
                 if todos.count == 0 {
                     EmptyListView()
                 }
-
+                
             }//: ZStack
             .sheet(isPresented: $showingAddTodoView, content: {
                 AddTodoView().environment(\.managedObjectContext, self.managedObjectContext)
@@ -67,13 +78,16 @@ struct ContentView: View {
                     Group{
                         Circle()
                             .fill(Color.blue)
-                            .opacity(0.2)
+                            .opacity(isBreathing ? 0.2 : 0)
+                            .scaleEffect(isBreathing ? 1 : 0)
                             .frame(width: 60, height: 60, alignment: .center)
-                        
+                            .animation(spinAnimation, value: isBreathing)
                         Circle()
                             .fill(Color.blue)
-                            .opacity(0.15)
+                            .opacity(isBreathing ? 0.15 : 0)
+                            .scaleEffect(isBreathing ? 1 : 0)
                             .frame(width: 80, height: 80, alignment: .center)
+                            .animation(spinAnimation, value: isBreathing)
                     }
                     
                     Button(action: {
@@ -84,10 +98,14 @@ struct ContentView: View {
                             .scaledToFit()
                             .background(Circle().fill(Color("ColorBase")))
                             .frame(width: 48, height: 48, alignment: .center)
-                })
+                    })
+                    .onAppear{
+                        self.isBreathing.toggle()
+                    }
                 } //: ZStack
                 .padding(.bottom, 15)
                 .padding(.trailing, 15)
+                
                 , alignment: .bottomTrailing
                 
             )
@@ -107,6 +125,8 @@ struct ContentView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

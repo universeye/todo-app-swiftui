@@ -16,6 +16,9 @@
 		BF57A8CE26B7A49800155253 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF57A8CD26B7A49800155253 /* Preview Assets.xcassets */; };
 		BF57A8D126B7A49800155253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF57A8CF26B7A49800155253 /* LaunchScreen.storyboard */; };
 		BF57A8D926B7A4A600155253 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF57A8D826B7A4A600155253 /* AddTodoView.swift */; };
+		BF90951026BD174900448C3A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90950F26BD174900448C3A /* SettingsView.swift */; };
+		BF9503D426BD1B1100FE4DFD /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9503D326BD1B1100FE4DFD /* FormRowStaticView.swift */; };
+		BF9503D626BD1D1400FE4DFD /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		BF57A8D026B7A49800155253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF57A8D226B7A49800155253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF57A8D826B7A4A600155253 /* AddTodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		BF90950F26BD174900448C3A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BF9503D326BD1B1100FE4DFD /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
+		BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 				BF57A8C526B7A49500155253 /* ContentView.swift */,
 				BF57A8D826B7A4A600155253 /* AddTodoView.swift */,
 				BF3343B226BB0B8C00AF3569 /* EmptyListView.swift */,
+				BF90950F26BD174900448C3A /* SettingsView.swift */,
+				BF9503D326BD1B1100FE4DFD /* FormRowStaticView.swift */,
+				BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF90951026BD174900448C3A /* SettingsView.swift in Sources */,
+				BF9503D426BD1B1100FE4DFD /* FormRowStaticView.swift in Sources */,
+				BF9503D626BD1D1400FE4DFD /* FormRowLinkView.swift in Sources */,
 				BF57A8C226B7A49500155253 /* AppDelegate.swift in Sources */,
 				BF57A8C426B7A49500155253 /* SceneDelegate.swift in Sources */,
 				BF3343B326BB0B8C00AF3569 /* EmptyListView.swift in Sources */,
