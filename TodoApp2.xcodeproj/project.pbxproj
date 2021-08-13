@@ -19,6 +19,11 @@
 		BF90951026BD174900448C3A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90950F26BD174900448C3A /* SettingsView.swift */; };
 		BF9503D426BD1B1100FE4DFD /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9503D326BD1B1100FE4DFD /* FormRowStaticView.swift */; };
 		BF9503D626BD1D1400FE4DFD /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */; };
+		BFF07D5B26C6074D00FF8B67 /* Purple White.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5726C6074D00FF8B67 /* Purple White.png */; };
+		BFF07D5C26C6074D00FF8B67 /* Linear Purple.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5826C6074D00FF8B67 /* Linear Purple.png */; };
+		BFF07D5D26C6074D00FF8B67 /* Default Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5926C6074D00FF8B67 /* Default Blue.png */; };
+		BFF07D5E26C6074D00FF8B67 /* Red White.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5A26C6074D00FF8B67 /* Red White.png */; };
+		BFF07D6026C6102400FF8B67 /* IconManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF07D5F26C6102400FF8B67 /* IconManagers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		BF90950F26BD174900448C3A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BF9503D326BD1B1100FE4DFD /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
+		BFF07D5726C6074D00FF8B67 /* Purple White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple White.png"; sourceTree = "<group>"; };
+		BFF07D5826C6074D00FF8B67 /* Linear Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linear Purple.png"; sourceTree = "<group>"; };
+		BFF07D5926C6074D00FF8B67 /* Default Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default Blue.png"; sourceTree = "<group>"; };
+		BFF07D5A26C6074D00FF8B67 /* Red White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red White.png"; sourceTree = "<group>"; };
+		BFF07D5F26C6102400FF8B67 /* IconManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManagers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,8 @@
 			children = (
 				BF57A8C126B7A49500155253 /* AppDelegate.swift */,
 				BF57A8C326B7A49500155253 /* SceneDelegate.swift */,
+				BFF07D5F26C6102400FF8B67 /* IconManagers.swift */,
+				BFF07D5626C605E700FF8B67 /* Icons */,
 				BF57A8DA26B7A4AE00155253 /* Views */,
 				BF57A8CA26B7A49800155253 /* Assets.xcassets */,
 				BF57A8CF26B7A49800155253 /* LaunchScreen.storyboard */,
@@ -99,6 +111,17 @@
 				BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BFF07D5626C605E700FF8B67 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				BFF07D5926C6074D00FF8B67 /* Default Blue.png */,
+				BFF07D5826C6074D00FF8B67 /* Linear Purple.png */,
+				BFF07D5726C6074D00FF8B67 /* Purple White.png */,
+				BFF07D5A26C6074D00FF8B67 /* Red White.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +181,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF07D5B26C6074D00FF8B67 /* Purple White.png in Resources */,
 				BF57A8D126B7A49800155253 /* LaunchScreen.storyboard in Resources */,
+				BFF07D5E26C6074D00FF8B67 /* Red White.png in Resources */,
 				BF57A8CE26B7A49800155253 /* Preview Assets.xcassets in Resources */,
+				BFF07D5C26C6074D00FF8B67 /* Linear Purple.png in Resources */,
+				BFF07D5D26C6074D00FF8B67 /* Default Blue.png in Resources */,
 				BF57A8CB26B7A49800155253 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +200,7 @@
 			files = (
 				BF90951026BD174900448C3A /* SettingsView.swift in Sources */,
 				BF9503D426BD1B1100FE4DFD /* FormRowStaticView.swift in Sources */,
+				BFF07D6026C6102400FF8B67 /* IconManagers.swift in Sources */,
 				BF9503D626BD1D1400FE4DFD /* FormRowLinkView.swift in Sources */,
 				BF57A8C226B7A49500155253 /* AppDelegate.swift in Sources */,
 				BF57A8C426B7A49500155253 /* SceneDelegate.swift in Sources */,

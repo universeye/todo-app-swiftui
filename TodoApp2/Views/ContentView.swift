@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
+    //MARK: - Properties
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var showingAddTodoView: Bool = false
     @State private var isShowingSettingsView: Bool = false
-    
+    @EnvironmentObject var iconSettings: IconName
     
     @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
     
@@ -26,7 +27,7 @@ struct ContentView: View {
     }
     @State private var selectedTodos = Set<UUID>()
     
-    
+    //MARK: - Body
     var body: some View {
         NavigationView {
             ZStack {
@@ -58,7 +59,7 @@ struct ContentView: View {
                             Image(systemName: "paintbrush")
                         })//: Add Button
                         .sheet(isPresented: $isShowingSettingsView, content: {
-                            SettingsView()
+                            SettingsView().environmentObject(self.iconSettings)
                         })
                 )
                 
@@ -112,7 +113,7 @@ struct ContentView: View {
         } //: NavigationView
     }
     
-    
+    //MARK: - Functions
     private func deleteTodo(at index: IndexSet) {
         for index in index {
             self.managedObjectContext.delete(todos[index])
@@ -127,7 +128,7 @@ struct ContentView: View {
 }
 
 
-
+//MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
