@@ -27,6 +27,9 @@ struct ContentView: View {
     }
     @State private var selectedTodos = Set<UUID>()
     
+    let themes: [Theme] = themeData
+    @ObservedObject var theme = ThemeSettings()
+    
     //MARK: - Body
     var body: some View {
         NavigationView {
@@ -34,10 +37,22 @@ struct ContentView: View {
                 List(selection: $selectedTodos) {
                     ForEach(self.todos, id: \.self) { todo in
                         HStack {
+                            Circle()
+                                .frame(width: 12, height: 12)
+                                .foregroundColor(self.colorize(priority: todo.priority ?? "Normal"))
                             Text(todo.name ?? "Unknown")
+                                .fontWeight(.semibold)
                             Spacer()
                             Text(todo.priority ?? "No Priority")
-                        }
+                                .font(.footnote)
+                                .foregroundColor(Color(UIColor.systemGray2))
+                                .padding(3)
+                                .frame(minWidth: 62)
+                                .overlay(
+                                    Capsule().stroke(Color(UIColor.systemGray2), lineWidth: 0.75)
+                                )
+                        }//: HStack
+                        .padding(.vertical, 10)
                     }
                     
                     .onDelete(perform: deleteTodo)
@@ -46,7 +61,7 @@ struct ContentView: View {
                 .listStyle(PlainListStyle())
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        EditButton()
+                        EditButton().accentColor(themes[self.theme.themeSettings].themeColor)
                     }
                 })
                 .navigationBarTitle("Todo", displayMode: .inline)
@@ -78,13 +93,13 @@ struct ContentView: View {
                 ZStack {
                     Group{
                         Circle()
-                            .fill(Color.blue)
+                            .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(isBreathing ? 0.2 : 0)
                             .scaleEffect(isBreathing ? 1 : 0)
                             .frame(width: 60, height: 60, alignment: .center)
                             .animation(spinAnimation, value: isBreathing)
                         Circle()
-                            .fill(Color.blue)
+                            .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(isBreathing ? 0.15 : 0)
                             .scaleEffect(isBreathing ? 1 : 0)
                             .frame(width: 80, height: 80, alignment: .center)
@@ -100,6 +115,7 @@ struct ContentView: View {
                             .background(Circle().fill(Color("ColorBase")))
                             .frame(width: 48, height: 48, alignment: .center)
                     })
+                    .accentColor(themes[self.theme.themeSettings].themeColor)
                     .onAppear{
                         self.isBreathing.toggle()
                     }
@@ -111,6 +127,8 @@ struct ContentView: View {
                 
             )
         } //: NavigationView
+        .accentColor(themes[self.theme.themeSettings].themeColor)
+        .navigationViewStyle(StackNavigationViewStyle())//for ipad
     }
     
     //MARK: - Functions
@@ -123,6 +141,20 @@ struct ContentView: View {
             } catch {
                 print(error)
             }
+        }
+    }
+    
+    
+    private func colorize(priority: String) -> Color {
+        switch priority {
+        case "High":
+            return Color.pink
+        case "Normal":
+            return Color.green
+        case "Low":
+            return Color.blue
+        default:
+            return Color.gray
         }
     }
 }

@@ -12,16 +12,19 @@ struct SettingsView: View {
     //MARK: - Properties
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var iconSettings: IconName
-
+    
+    let themes: [Theme] = themeData
+    @ObservedObject var theme = ThemeSettings()
+    
     //MARK: - Body
-
+    
     var body: some View {
         
         
         NavigationView {
             VStack(alignment: .center, spacing: 0) {
                 //MARK: - FORM
-
+                
                 Form {
                     //MARK: - Secition 1
                     Section(header: Text("Choose the app icon")) {
@@ -40,36 +43,67 @@ struct SettingsView: View {
                                         .foregroundColor(Color.primary)
                                 }
                                , content: {
-                            
-                            ForEach(0..<iconSettings.iconNames.count) { index in
-                                HStack {
-                                    Image(uiImage: UIImage(named: iconSettings.iconNames[index] ?? "Default Blue") ?? UIImage())
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 44, height: 44, alignment: .center)
-                                        .cornerRadius(8)
-                                    Spacer().frame(width: 8)
-                                    Text(iconSettings.iconNames[index] ?? "Default Blue")
-                                        .frame(alignment: .leading)
-                                }//: HStack
-                                .padding(3)
-                            }
-                        })
-                        .onReceive([self.iconSettings.currentIndex].publisher.first(), perform: { (value) in
-                            let index = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0
-                            if index != value {
-                                UIApplication.shared.setAlternateIconName(self.iconSettings.iconNames[value]) { error in
-                                    if let error = error {
-                                        print(error.localizedDescription)
-                                    } else {
-                                        print("Success changing icon")
+                                
+                                ForEach(0..<iconSettings.iconNames.count) { index in
+                                    HStack {
+                                        Image(uiImage: UIImage(named: iconSettings.iconNames[index] ?? "Default Blue") ?? UIImage())
+                                            .renderingMode(.original)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 44, height: 44, alignment: .center)
+                                            .cornerRadius(8)
+                                        Spacer().frame(width: 8)
+                                        Text(iconSettings.iconNames[index] ?? "Default Blue")
+                                            .frame(alignment: .leading)
+                                    }//: HStack
+                                    .padding(3)
+                                }
+                               })
+                            .onReceive([self.iconSettings.currentIndex].publisher.first(), perform: { (value) in
+                                let index = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0
+                                if index != value {
+                                    UIApplication.shared.setAlternateIconName(self.iconSettings.iconNames[value]) { error in
+                                        if let error = error {
+                                            print(error.localizedDescription)
+                                        } else {
+                                            print("Success changing icon")
+                                        }
                                     }
                                 }
-                            }
-                        })
+                            })
                     } //: Section 1
                     .padding(.vertical,3)
+                    
+                    //MARK: - Section 2
+                    Section(header:
+                                HStack {
+                                    Text("Choose the app theme")
+                                    
+                                    Circle()
+                                        .fill(themes[self.theme.themeSettings].themeColor)
+                                        .frame(width: 10, height: 10, alignment: .center)
+                                }) {
+                        List {
+                            ForEach(themes, id: \.id) { item in
+                                Button(action: {
+                                    self.theme.themeSettings = item.id
+                                    UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                }, label: {
+                                    HStack {
+                                        Circle()
+                                            .fill(item.themeColor)
+                                            .frame(width: 14, height: 14, alignment: .center)
+                                            .overlay(
+                                                Circle()
+                                                    .stroke(Color.black, lineWidth: 1.8))
+                                        Text("\(item.themeName)")
+                                    }//: HStack
+                                })//: Button
+                                .accentColor(.primary)
+                            }//: ForEach
+                        }//: List
+                    } //: Section 2
+                    .padding(.vertical, 3)
                     
                     //MARK: - Section 3
                     
@@ -79,7 +113,7 @@ struct SettingsView: View {
                         FormRowLinkView(icon: "play.rectangle", color: Color.green, text: "Courses", link: "https://www.youtube.com/channel/UCuafBQTj7JGByhzVuMhcOZg")
                     }
                     .padding(.vertical, 3)
-
+                    
                     
                     //MARK: - Section 4
                     Section(header: Text("About the application")) {
@@ -91,10 +125,10 @@ struct SettingsView: View {
                     }
                     .padding(.vertical, 3)
                     
-
+                    
                 } //: Form
                 
-//                .environment(\.horizontalSizeClass, .compact)
+                //                .environment(\.horizontalSizeClass, .compact)
                 
                 //MARK: - Footer
                 Text("Cpoyright All rights reserved. \nBetter Apps Less Code")
@@ -103,7 +137,7 @@ struct SettingsView: View {
                     .padding(.top, 6)
                     .padding(.bottom, 8)
                     .foregroundColor(Color.secondary)
-
+                
             }//: VStack
             .navigationBarItems(trailing: Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
@@ -113,7 +147,8 @@ struct SettingsView: View {
             .navigationBarTitle("Settings", displayMode: .inline)
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             
-        }//: NavigationView
+        }//: NavigationView\
+        .accentColor(themes[self.theme.themeSettings].themeColor)
     }
 }
 

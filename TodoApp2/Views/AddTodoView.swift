@@ -19,6 +19,9 @@ struct AddTodoView: View {
     @State private var errorMessage: String = ""
     let priorities = ["High", "Normal", "Low"]
     
+    let themes: [Theme] = themeData
+    @ObservedObject var theme = ThemeSettings()
+    
     //MARK: - BODY
     
     var body: some View {
@@ -27,11 +30,13 @@ struct AddTodoView: View {
                 VStack(alignment: .leading, spacing: 20 ){
                     //MARK: - Todo Name
                     
-                    TextField("Todo", text: $name)
+                    FirstResponderTextField(name: $name, placeholder: "Add someting!")
+                    //TextField("Todo", text: $name)
                         .padding()
                         .background(Color(UIColor.tertiarySystemFill))
                         .cornerRadius(9)
                         .font(.system(size: 24, weight: .bold, design: .default))
+                        .frame(maxHeight: 70)
                     
                     //MARK: - Todo Priority
                     Picker("Priority", selection: $priority) {
@@ -69,7 +74,7 @@ struct AddTodoView: View {
                             .font(.system(size: 24, weight: .bold, design: .default))
                             .padding()
                             .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(Color.blue)
+                            .background(themes[self.theme.themeSettings].themeColor)
                             .foregroundColor(.white)
                             .cornerRadius(9)
                     })
@@ -88,7 +93,7 @@ struct AddTodoView: View {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             })
         } //: Navigation
-        
+        .accentColor(themes[self.theme.themeSettings].themeColor)
     }
 }
 
