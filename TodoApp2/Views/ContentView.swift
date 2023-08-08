@@ -61,7 +61,10 @@ struct ContentView: View {
                 .listStyle(PlainListStyle())
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        EditButton().accentColor(themes[self.theme.themeSettings].themeColor)
+                        if todos.count > 0 {
+                            EditButton().accentColor(themes[self.theme.themeSettings].themeColor)
+                        }
+                        
                     }
                 })
                 .navigationBarTitle("Todo", displayMode: .inline)
@@ -87,6 +90,7 @@ struct ContentView: View {
             }//: ZStack
             .sheet(isPresented: $showingAddTodoView, content: {
                 AddTodoView().environment(\.managedObjectContext, self.managedObjectContext)
+                    .presentationDetents([.medium])
             })
             
             .overlay(
@@ -97,13 +101,13 @@ struct ContentView: View {
                             .opacity(isBreathing ? 0.2 : 0)
                             .scaleEffect(isBreathing ? 1 : 0)
                             .frame(width: 60, height: 60, alignment: .center)
-                            .animation(spinAnimation, value: isBreathing)
+//                            .animation(spinAnimation, value: isBreathing)
                         Circle()
                             .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(isBreathing ? 0.15 : 0)
                             .scaleEffect(isBreathing ? 1 : 0)
                             .frame(width: 80, height: 80, alignment: .center)
-                            .animation(spinAnimation, value: isBreathing)
+//                            .animation(spinAnimation, value: isBreathing)
                     }
                     
                     Button(action: {

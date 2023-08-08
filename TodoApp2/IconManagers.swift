@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-
 //MARK: - Alternate Icons
-
 class IconName: ObservableObject {
     var iconNames: [String?] = [nil]
     @Published var currentIndex = 0

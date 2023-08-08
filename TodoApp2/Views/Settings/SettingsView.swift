@@ -44,19 +44,21 @@ struct SettingsView: View {
                                 }
                                , content: {
                                 
-                                ForEach(0..<iconSettings.iconNames.count) { index in
+                            ForEach(0..<iconSettings.iconNames.count, id: \.self) { index in
                                     HStack {
-                                        Image(uiImage: UIImage(named: iconSettings.iconNames[index] ?? "Default Blue") ?? UIImage())
-                                            .renderingMode(.original)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 44, height: 44, alignment: .center)
-                                            .cornerRadius(8)
-                                        Spacer().frame(width: 8)
+//                                        Image(uiImage: UIImage(named: iconSettings.iconNames[index] ?? "Default Blue") ?? UIImage())
+//                                            .renderingMode(.original)
+//                                            .resizable()
+//                                            .scaledToFill()
+//                                            .frame(width: 44, height: 44, alignment: .center)
+//                                            .cornerRadius(8)
+//                                        Spacer().frame(width: 8)
                                         Text(iconSettings.iconNames[index] ?? "Default Blue")
                                             .frame(alignment: .leading)
                                     }//: HStack
+                                    
                                     .padding(3)
+                                    
                                 }
                                })
                             .onReceive([self.iconSettings.currentIndex].publisher.first(), perform: { (value) in

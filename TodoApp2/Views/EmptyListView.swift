@@ -12,16 +12,16 @@ struct EmptyListView: View {
     
     @State private var isAnimated: Bool = false
     
-    let images = ["todoman1", "todoman2", "todoman3"]
+    let images = ["todo1", "todo2", "todo3"]
     
     let tips = [
         "Use your time wisely.",
-        "Slow and steady wins the race",
-        "Keep it short and sweet",
+        "Slow and steady wins the race.",
+        "Keep it short and sweet.",
         "Put hard tasks first",
         "Reward yourself after work",
         "Collect tasks ahead of time.",
-        "Each night schedule for tomorrow"
+        "Each night schedule for tomorrow."
     ]
 
     
@@ -31,9 +31,9 @@ struct EmptyListView: View {
 
     var body: some View {
         ZStack {
-            VStack(alignment: .center, spacing: 20) {
+            VStack(alignment: .center, spacing: 10) {
                 Image("\(images.randomElement() ?? images[0])")
-                    .renderingMode(.template)
+                    .renderingMode(.original)
                     .resizable()
                     .scaledToFit()
                     .frame(minWidth: 256, maxWidth: 360, minHeight: 256, maxHeight: 360, alignment: .center)
@@ -44,10 +44,10 @@ struct EmptyListView: View {
                     .font(.system(.headline, design: .rounded))
                     .foregroundColor(themes[self.theme.themeSettings].themeColor)
             }//: VStack
-            .padding(.horizontal)
+//            .padding(.horizontal)
             .opacity(isAnimated ? 1 : 0)
-            .offset(x: isAnimated ? 0 : 0, y: isAnimated ? 0 : -50)
-            .animation(.easeOut(duration: 1.5))
+            .scaleEffect(isAnimated ? 1 : 0.5)
+            .animation(.easeOut(duration: 0.5), value: isAnimated)
             .onAppear {
                 self.isAnimated.toggle()
             }
