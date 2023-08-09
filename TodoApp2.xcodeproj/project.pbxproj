@@ -20,13 +20,14 @@
 		BF90951026BD174900448C3A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90950F26BD174900448C3A /* SettingsView.swift */; };
 		BF9503D426BD1B1100FE4DFD /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9503D326BD1B1100FE4DFD /* FormRowStaticView.swift */; };
 		BF9503D626BD1D1400FE4DFD /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */; };
+		BFE711752A83C342006DFD9D /* Red White.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE711742A83C342006DFD9D /* Red White.png */; };
+		BFE711772A83C3A8006DFD9D /* Purple White.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE711762A83C3A8006DFD9D /* Purple White.png */; };
+		BFE711792A83C3CC006DFD9D /* Linear Purple.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE711782A83C3CC006DFD9D /* Linear Purple.png */; };
+		BFE7117B2A83C3DB006DFD9D /* Default Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE7117A2A83C3DB006DFD9D /* Default Blue.png */; };
+		BFE7117D2A83C455006DFD9D /* ButtonStyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE7117C2A83C455006DFD9D /* ButtonStyleExtension.swift */; };
 		BFEA349C26CA0FFD00E173C6 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA349B26CA0FFD00E173C6 /* ThemeModel.swift */; };
 		BFEA349E26CA104D00E173C6 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA349D26CA104D00E173C6 /* ThemeData.swift */; };
 		BFEA34A026CA117B00E173C6 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA349F26CA117B00E173C6 /* ThemeSettings.swift */; };
-		BFF07D5B26C6074D00FF8B67 /* Purple White.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5726C6074D00FF8B67 /* Purple White.png */; };
-		BFF07D5C26C6074D00FF8B67 /* Linear Purple.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5826C6074D00FF8B67 /* Linear Purple.png */; };
-		BFF07D5D26C6074D00FF8B67 /* Default Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5926C6074D00FF8B67 /* Default Blue.png */; };
-		BFF07D5E26C6074D00FF8B67 /* Red White.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF07D5A26C6074D00FF8B67 /* Red White.png */; };
 		BFF07D6026C6102400FF8B67 /* IconManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF07D5F26C6102400FF8B67 /* IconManagers.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +47,14 @@
 		BF90950F26BD174900448C3A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BF9503D326BD1B1100FE4DFD /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		BF9503D526BD1D1400FE4DFD /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
+		BFE711742A83C342006DFD9D /* Red White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red White.png"; sourceTree = "<group>"; };
+		BFE711762A83C3A8006DFD9D /* Purple White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple White.png"; sourceTree = "<group>"; };
+		BFE711782A83C3CC006DFD9D /* Linear Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linear Purple.png"; sourceTree = "<group>"; };
+		BFE7117A2A83C3DB006DFD9D /* Default Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default Blue.png"; sourceTree = "<group>"; };
+		BFE7117C2A83C455006DFD9D /* ButtonStyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleExtension.swift; sourceTree = "<group>"; };
 		BFEA349B26CA0FFD00E173C6 /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		BFEA349D26CA104D00E173C6 /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 		BFEA349F26CA117B00E173C6 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
-		BFF07D5726C6074D00FF8B67 /* Purple White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple White.png"; sourceTree = "<group>"; };
-		BFF07D5826C6074D00FF8B67 /* Linear Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linear Purple.png"; sourceTree = "<group>"; };
-		BFF07D5926C6074D00FF8B67 /* Default Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default Blue.png"; sourceTree = "<group>"; };
-		BFF07D5A26C6074D00FF8B67 /* Red White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red White.png"; sourceTree = "<group>"; };
 		BFF07D5F26C6102400FF8B67 /* IconManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManagers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				BF57A8C326B7A49500155253 /* SceneDelegate.swift */,
 				BFF07D5F26C6102400FF8B67 /* IconManagers.swift */,
 				BF29C3D026CB95DC00CACF02 /* FirstResponderTextField.swift */,
+				BFE7117C2A83C455006DFD9D /* ButtonStyleExtension.swift */,
 				BFEA349A26CA0FF000E173C6 /* Theme */,
 				BFF07D5626C605E700FF8B67 /* Icons */,
 				BF57A8DA26B7A4AE00155253 /* Views */,
@@ -144,10 +147,10 @@
 		BFF07D5626C605E700FF8B67 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				BFF07D5926C6074D00FF8B67 /* Default Blue.png */,
-				BFF07D5826C6074D00FF8B67 /* Linear Purple.png */,
-				BFF07D5726C6074D00FF8B67 /* Purple White.png */,
-				BFF07D5A26C6074D00FF8B67 /* Red White.png */,
+				BFE7117A2A83C3DB006DFD9D /* Default Blue.png */,
+				BFE711782A83C3CC006DFD9D /* Linear Purple.png */,
+				BFE711742A83C342006DFD9D /* Red White.png */,
+				BFE711762A83C3A8006DFD9D /* Purple White.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -210,13 +213,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF07D5B26C6074D00FF8B67 /* Purple White.png in Resources */,
+				BFE711752A83C342006DFD9D /* Red White.png in Resources */,
 				BF57A8D126B7A49800155253 /* LaunchScreen.storyboard in Resources */,
-				BFF07D5E26C6074D00FF8B67 /* Red White.png in Resources */,
 				BF57A8CE26B7A49800155253 /* Preview Assets.xcassets in Resources */,
-				BFF07D5C26C6074D00FF8B67 /* Linear Purple.png in Resources */,
-				BFF07D5D26C6074D00FF8B67 /* Default Blue.png in Resources */,
+				BFE711792A83C3CC006DFD9D /* Linear Purple.png in Resources */,
+				BFE711772A83C3A8006DFD9D /* Purple White.png in Resources */,
 				BF57A8CB26B7A49800155253 /* Assets.xcassets in Resources */,
+				BFE7117B2A83C3DB006DFD9D /* Default Blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +239,7 @@
 				BFEA349C26CA0FFD00E173C6 /* ThemeModel.swift in Sources */,
 				BF9503D626BD1D1400FE4DFD /* FormRowLinkView.swift in Sources */,
 				BF57A8C226B7A49500155253 /* AppDelegate.swift in Sources */,
+				BFE7117D2A83C455006DFD9D /* ButtonStyleExtension.swift in Sources */,
 				BF57A8C426B7A49500155253 /* SceneDelegate.swift in Sources */,
 				BF3343B326BB0B8C00AF3569 /* EmptyListView.swift in Sources */,
 				BF57A8C926B7A49500155253 /* TodoApp2.xcdatamodeld in Sources */,

@@ -11,13 +11,15 @@ struct ContentView: View {
     
     //MARK: - Properties
     @Environment(\.managedObjectContext) var managedObjectContext
+    
     @State private var showingAddTodoView: Bool = false
     @State private var isShowingSettingsView: Bool = false
-    @EnvironmentObject var iconSettings: IconName
-    
-    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
-    
     @State private var isBreathing: Bool = false
+    @State private var selectedTodos = Set<UUID>()
+    
+    @EnvironmentObject var iconSettings: IconName
+    @EnvironmentObject var theme: ThemeSettings
+    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
     
     private var spinAnimation: Animation {
         Animation
@@ -25,10 +27,10 @@ struct ContentView: View {
 //            .speed(0.15)
             .repeatCount(isBreathing ? .max : 0, autoreverses: true)
     }
-    @State private var selectedTodos = Set<UUID>()
+    
     
     let themes: [Theme] = themeData
-    @ObservedObject var theme = ThemeSettings()
+    
     
     //MARK: - Body
     var body: some View {
@@ -71,7 +73,6 @@ struct ContentView: View {
                 .navigationBarItems(
                     trailing:
                         Button(action: {
-                            //Show add todo View
                             self.isShowingSettingsView.toggle()
                         }, label: {
                             Image(systemName: "paintbrush")
@@ -98,16 +99,16 @@ struct ContentView: View {
                     Group{
                         Circle()
                             .fill(themes[self.theme.themeSettings].themeColor)
-                            .opacity(isBreathing ? 0.2 : 0)
-                            .scaleEffect(isBreathing ? 1 : 0)
+                            .opacity(isBreathing ? 0.2 : 0.01)
+                            .scaleEffect(isBreathing ? 1 :  0.001 )
                             .frame(width: 60, height: 60, alignment: .center)
-//                            .animation(spinAnimation, value: isBreathing)
+                            .animation(spinAnimation, value: isBreathing)
                         Circle()
                             .fill(themes[self.theme.themeSettings].themeColor)
-                            .opacity(isBreathing ? 0.15 : 0)
-                            .scaleEffect(isBreathing ? 1 : 0)
+                            .opacity(isBreathing ? 0.15 : 0.01)
+                            .scaleEffect(isBreathing ? 1 :  0.001 )
                             .frame(width: 80, height: 80, alignment: .center)
-//                            .animation(spinAnimation, value: isBreathing)
+                            .animation(spinAnimation, value: isBreathing)
                     }
                     
                     Button(action: {
@@ -124,8 +125,8 @@ struct ContentView: View {
                         self.isBreathing.toggle()
                     }
                 } //: ZStack
-                .padding(.bottom, 15)
-                .padding(.trailing, 15)
+                    .padding(.bottom, 15)
+                    .padding(.trailing, 15)
                 
                 , alignment: .bottomTrailing
                 
@@ -164,10 +165,10 @@ struct ContentView: View {
 }
 
 
-//MARK: - Preview
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        return ContentView().environment(\.managedObjectContext, context)
-    }
-}
+////MARK: - Preview
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        return ContentView().environment(\.managedObjectContext, context)
+//    }
+//}

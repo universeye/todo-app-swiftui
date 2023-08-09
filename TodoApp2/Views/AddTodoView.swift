@@ -20,7 +20,7 @@ struct AddTodoView: View {
     let priorities = ["High", "Normal", "Low"]
     
     let themes: [Theme] = themeData
-    @ObservedObject var theme = ThemeSettings()
+    @EnvironmentObject var theme: ThemeSettings
     
     //MARK: - BODY
     
@@ -36,7 +36,7 @@ struct AddTodoView: View {
                         .background(Color(UIColor.tertiarySystemFill))
                         .cornerRadius(9)
                         .font(.system(size: 24, weight: .bold, design: .default))
-                        .frame(maxHeight: 70)
+                        .frame(maxWidth: 370, maxHeight: 70)
                     
                     //MARK: - Todo Priority
                     Picker("Priority", selection: $priority) {
@@ -48,12 +48,10 @@ struct AddTodoView: View {
                     
                     //MARK: - Saved Button
                     Button(action: {
-                        
                         if self.name != "" {
                             let todo = Todo(context: self.managedObjectContext)
                             todo.name = self.name
                             todo.priority = self.priority
-                            
                             
                             do {
                                 try self.managedObjectContext.save()
@@ -74,9 +72,10 @@ struct AddTodoView: View {
                             .font(.system(size: 24, weight: .bold, design: .default))
                             .padding()
                             .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(themes[self.theme.themeSettings].themeColor)
+                            .background(themes[self.theme.themeSettings].themeColor.gradient)
                             .foregroundColor(.white)
                             .cornerRadius(9)
+                            .shadow(radius: 5)
                     })
                     
                     
@@ -86,9 +85,16 @@ struct AddTodoView: View {
                 Spacer()
             } //: VStack
             .navigationBarTitle("New Todo", displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: {self.presentationMode.wrappedValue.dismiss()}, label: {
-                Image(systemName: "xmark")
-            }))
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                    .buttonStyle(.toolBarButton)
+                }
+            }
             .alert(isPresented: $errorShowing, content: {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             })

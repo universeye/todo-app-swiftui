@@ -26,7 +26,7 @@ struct EmptyListView: View {
 
     
     let themes: [Theme] = themeData
-    @ObservedObject var theme = ThemeSettings()
+    @EnvironmentObject var theme: ThemeSettings
     //MARK: - Body
 
     var body: some View {
@@ -47,7 +47,7 @@ struct EmptyListView: View {
 //            .padding(.horizontal)
             .opacity(isAnimated ? 1 : 0)
             .scaleEffect(isAnimated ? 1 : 0.5)
-            .animation(.easeOut(duration: 0.5), value: isAnimated)
+            .animation(.spring(), value: isAnimated)
             .onAppear {
                 self.isAnimated.toggle()
             }
