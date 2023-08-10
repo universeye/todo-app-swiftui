@@ -41,7 +41,7 @@ struct EmptyListView: View {
                     .foregroundColor(themes[self.theme.themeSettings].themeColor)
                 Text("\(tips.randomElement() ?? tips[0])")
                     .layoutPriority(0.5)
-                    .font(.system(.headline, design: .rounded))
+                    .font(.custom("JosefinSansRoman-Regular", size: 20))
                     .foregroundColor(themes[self.theme.themeSettings].themeColor)
             }//: VStack
 //            .padding(.horizontal)
@@ -49,6 +49,10 @@ struct EmptyListView: View {
             .scaleEffect(isAnimated ? 1 : 0.5)
             .animation(.spring(), value: isAnimated)
             .onAppear {
+                for family in UIFont.familyNames.sorted() {
+                            let names = UIFont.fontNames(forFamilyName: family)
+                            print("Family: \(family) Font names: \(names)")
+                        }
                 self.isAnimated.toggle()
             }
         }//: ZStack

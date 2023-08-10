@@ -2,11 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>JosefinSans-Italic-VariableFont_wght.ttf</string>
-		<string>JosefinSans-VariableFont_wght.ttf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -58,42 +53,6 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>Special(1)</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Special(2) </key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Special(2)</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Purple Gradient</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Purple Gradient</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Purple(2)</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Purple(2)</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Red(2)</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Red(2)</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>

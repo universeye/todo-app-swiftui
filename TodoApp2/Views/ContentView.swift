@@ -31,6 +31,9 @@ struct ContentView: View {
     
     let themes: [Theme] = themeData
     
+    init() {
+            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "JosefinSansRoman-Regular", size: 20)!]
+        }
     
     //MARK: - Body
     var body: some View {
@@ -86,13 +89,14 @@ struct ContentView: View {
                         
                     }
                 })
-                .navigationBarTitle("Todo", displayMode: .inline)
+                .navigationBarTitle(Text("Todooey"), displayMode: .inline)
                 .navigationBarItems(
                     trailing:
                         Button(action: {
                             self.isShowingSettingsView.toggle()
                         }, label: {
-                            Image(systemName: "paintbrush")
+                            Image("paint_brushSVG")
+                                .renderingMode(.template)
                         })//: Add Button
                         .sheet(isPresented: $isShowingSettingsView, content: {
                             SettingsView().environmentObject(self.iconSettings)
