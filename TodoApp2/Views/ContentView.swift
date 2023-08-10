@@ -19,7 +19,7 @@ struct ContentView: View {
     
     @EnvironmentObject var iconSettings: IconName
     @EnvironmentObject var theme: ThemeSettings
-    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
+    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.isDone, ascending: true)], animation: .spring()) var todos: FetchedResults<Todo>
     
     private var spinAnimation: Animation {
         Animation
@@ -41,11 +41,13 @@ struct ContentView: View {
                         HStack {
                             Circle()
                                 .frame(width: 12, height: 12)
-                                .foregroundColor(self.colorize(priority: todo.priority ?? "Normal"))
+                                .foregroundColor(todo.isDone ? .gray : self.colorize(priority: todo.priority ?? "Normal"))
                             Text(todo.name ?? "Unknown")
+                                .foregroundColor(todo.isDone ? .gray : Color.primary)
                                 .fontWeight(.semibold)
+                                .strikethrough(todo.isDone)
                             Spacer()
-                            Text(todo.priority ?? "No Priority")
+                            Text(todo.isDone ? "Done" : todo.priority ?? "No Priority")
                                 .font(.footnote)
                                 .foregroundColor(Color(UIColor.systemGray2))
                                 .padding(3)
@@ -55,6 +57,21 @@ struct ContentView: View {
                                 )
                         }//: HStack
                         .padding(.vertical, 10)
+                        .swipeActions(edge: .leading) {
+                            Button(action: {
+                                setDoneState(todo: todo, isDone: true)
+                            }, label: {
+                                Image(systemName: "checkmark.circle.fill")
+                            })
+                            .tint(.green)
+                            
+                            Button(action: {
+                                setDoneState(todo: todo, isDone: false)
+                            }, label: {
+                                Text("Undone")
+                            })
+                            .tint(.yellow)
+                        }
                     }
                     
                     .onDelete(perform: deleteTodo)
@@ -146,6 +163,18 @@ struct ContentView: View {
             } catch {
                 print(error)
             }
+        }
+    }
+    
+    private func setDoneState(todo: FetchedResults<Todo>.Element, isDone: Bool) {
+        withAnimation {
+            todo.isDone = isDone
+        }
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error)
         }
     }
     

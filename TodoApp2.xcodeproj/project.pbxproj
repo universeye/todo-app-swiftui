@@ -25,6 +25,7 @@
 		BFE711792A83C3CC006DFD9D /* Linear Purple.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE711782A83C3CC006DFD9D /* Linear Purple.png */; };
 		BFE7117B2A83C3DB006DFD9D /* Default Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE7117A2A83C3DB006DFD9D /* Default Blue.png */; };
 		BFE7117D2A83C455006DFD9D /* ButtonStyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE7117C2A83C455006DFD9D /* ButtonStyleExtension.swift */; };
+		BFE7117F2A83CE63006DFD9D /* Special(1).png in Resources */ = {isa = PBXBuildFile; fileRef = BFE7117E2A83CE63006DFD9D /* Special(1).png */; };
 		BFEA349C26CA0FFD00E173C6 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA349B26CA0FFD00E173C6 /* ThemeModel.swift */; };
 		BFEA349E26CA104D00E173C6 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA349D26CA104D00E173C6 /* ThemeData.swift */; };
 		BFEA34A026CA117B00E173C6 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA349F26CA117B00E173C6 /* ThemeSettings.swift */; };
@@ -52,6 +53,7 @@
 		BFE711782A83C3CC006DFD9D /* Linear Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linear Purple.png"; sourceTree = "<group>"; };
 		BFE7117A2A83C3DB006DFD9D /* Default Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default Blue.png"; sourceTree = "<group>"; };
 		BFE7117C2A83C455006DFD9D /* ButtonStyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleExtension.swift; sourceTree = "<group>"; };
+		BFE7117E2A83CE63006DFD9D /* Special(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Special(1).png"; sourceTree = "<group>"; };
 		BFEA349B26CA0FFD00E173C6 /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		BFEA349D26CA104D00E173C6 /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 		BFEA349F26CA117B00E173C6 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				BFE711782A83C3CC006DFD9D /* Linear Purple.png */,
 				BFE711742A83C342006DFD9D /* Red White.png */,
 				BFE711762A83C3A8006DFD9D /* Purple White.png */,
+				BFE7117E2A83CE63006DFD9D /* Special(1).png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				BFE711752A83C342006DFD9D /* Red White.png in Resources */,
 				BF57A8D126B7A49800155253 /* LaunchScreen.storyboard in Resources */,
 				BF57A8CE26B7A49800155253 /* Preview Assets.xcassets in Resources */,
+				BFE7117F2A83CE63006DFD9D /* Special(1).png in Resources */,
 				BFE711792A83C3CC006DFD9D /* Linear Purple.png in Resources */,
 				BFE711772A83C3A8006DFD9D /* Purple White.png in Resources */,
 				BF57A8CB26B7A49800155253 /* Assets.xcassets in Resources */,
@@ -384,15 +388,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoApp2/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T3DK8DFL5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TodoApp2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Todoey;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dzhiphop.TodoApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -406,15 +413,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoApp2/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T3DK8DFL5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TodoApp2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Todoey;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dzhiphop.TodoApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

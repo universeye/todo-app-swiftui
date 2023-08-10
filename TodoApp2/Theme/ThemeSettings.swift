@@ -13,7 +13,6 @@ class ThemeSettings: ObservableObject {
     @Published private(set) var activeError: String?
     @Published var themeSettings: Int = UserDefaults.standard.integer(forKey: "Theme") {
         didSet {
-            print("Setting theme")
             UserDefaults.standard.set(self.themeSettings, forKey: "Theme")
             self.activeError = "Success changing theme"
         }

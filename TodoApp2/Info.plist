@@ -19,36 +19,45 @@
 			<key>UIPrerenderedIcon</key>
 			<false/>
 		</dict>
-        <key>CFBundleAlternateIcons</key>
-        <dict>
-            <key>Linear Purple</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>Linear Purple</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>Purple White</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>Purple White</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>Red White</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>Red White</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-        </dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>Linear Purple</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Linear Purple</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Purple White</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Purple White</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Red White</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Red White</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Special(1)</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Special(1)</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>

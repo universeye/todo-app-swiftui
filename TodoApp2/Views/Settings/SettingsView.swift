@@ -30,28 +30,22 @@ struct SettingsView: View {
                     Section(header: Text("Choose the app icon")) {
                         Picker(selection: $iconSettings.currentIndex, label:
                                 HStack {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                    .strokeBorder(Color.primary, lineWidth: 2)
-                                Image(systemName: "paintbrush")
-                                    .font(.system(size: 28, weight: .regular, design: .default))
-                                    .foregroundColor(Color.primary)
-                            }
-                            .frame(width: 44, height: 44)
-                            Text("App Icon".uppercased())
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.primary)
-                        }
-                               , content: {
-                            
+                                    Image(uiImage: UIImage(named: iconSettings.iconNames[iconSettings.currentIndex] ?? "Default Blue") ?? UIImage())
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 48, height: 48)
+                                        .cornerRadius(10)
+                                        .frame(width: 44, height: 44)
+                                    Text("App Icon".uppercased())
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.primary)
+                        }, content: {
                             ForEach(0..<iconSettings.iconNames.count, id: \.self) { index in
                                 HStack {
                                     Text(iconSettings.iconNames[index] ?? "Default Blue")
                                         .frame(alignment: .leading)
-                                    
                                 }//: HStack
                                 .padding(3)
-                                
                             }
                         })
                         .onReceive([self.iconSettings.currentIndex].publisher.first(), perform: { (value) in
@@ -114,10 +108,10 @@ struct SettingsView: View {
                     
                     
                     //MARK: - Section 4
-                    Section(header: Text("About the application"), footer:  Text("Universeye, Cpoyright All rights reserved.")) {
+                    Section(header: Text("About the application"), footer:  Text("Universeye, Copyright All rights reserved.")) {
                         FormRowStaticView(icon: "gear", firstText: "Application", secondText: "Todo")
                         FormRowStaticView(icon: "checkmark.seal", firstText: "Compatibility", secondText: "iPhone, iPad")
-                        FormRowStaticView(icon: "keyboard", firstText: "Developer", secondText: "Terry Kuo")
+                        FormRowStaticView(icon: "keyboard", firstText: "Developer", secondText: "Universeye")
                         FormRowStaticView(icon: "paintbrush", firstText: "Designer", secondText: "Universeye")
                         FormRowStaticView(icon: "flag", firstText: "Version", secondText: "1.0.0")
                     }
@@ -125,18 +119,6 @@ struct SettingsView: View {
                     
                     
                 } //: Form
-                
-                //                .environment(\.horizontalSizeClass, .compact)
-                
-                //MARK: - Footer
-                //                Text("Cpoyright All rights reserved. \nBetter Apps Less Code")
-                //                    .multilineTextAlignment(.center)
-                //                    .font(.footnote)
-                //                    .padding(.top, 6)
-                //                    .padding(.bottom, 8)
-                //                    .foregroundColor(Color.secondary)
-                
-                
             }//: VStack
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -150,7 +132,6 @@ struct SettingsView: View {
             }
             .navigationBarTitle("Settings", displayMode: .inline)
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
-            
         }//: NavigationView\
         .accentColor(themes[self.theme.themeSettings].themeColor)
     }

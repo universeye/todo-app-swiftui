@@ -50,6 +50,7 @@ struct AddTodoView: View {
                     Button(action: {
                         if self.name != "" {
                             let todo = Todo(context: self.managedObjectContext)
+                            todo.isDone = false
                             todo.name = self.name
                             todo.priority = self.priority
                             
