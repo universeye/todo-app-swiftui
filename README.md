@@ -24,11 +24,16 @@ A to-do app follow the courses by [Credo Academy](https://www.youtube.com/channe
 * Be able to choose alternate icons
 * First responder textfield with UIRepresentable
 * Ability to change app's overall theme
-* Works on ipad
+* iPad/Mac support
+* Dark/Light mode support
 
+### To-do
+- iCLoud sync across devices
+- Sorting
+- WidgetKit
+  
 ### Known Issues
-- First icon won't work
-- Had to relaunch the app for theme chaging
+- Special(2) icon doesn't work
 
 
 # Source
