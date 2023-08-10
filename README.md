@@ -1,5 +1,5 @@
-# To-Do App
-SwiftUI, a to-do app follow the courses by [Credo Academy](https://www.youtube.com/channel/UCwj8wWneM1JkNuM_HoJzb-g), with extra feature added myself like first responder textfield.
+# Todoeey
+A to-do app follow the courses by [Credo Academy](https://www.youtube.com/channel/UCwj8wWneM1JkNuM_HoJzb-g), with extra feature added myself like first responder textfield...etc. Fully built in Love & SwiftUI.
 
 
 # Menu
@@ -12,9 +12,9 @@ SwiftUI, a to-do app follow the courses by [Credo Academy](https://www.youtube.c
 
 # Screenshots
 
-<img src= "ReadmeSources/homescreen.gif" width = 40% height = 40%> <img src= "ReadmeSources/addtodoscreen.png" width = 40% height = 40%>
+<img src= "ReadmeSources/homescreenemptyview.jpeg" width = 35% height = 35%> <img src= "ReadmeSources/addtodoview.jpeg" width = 35% height = 35%>
 
-<img src= "ReadmeSources/settingscreen.png" width = 40% height = 40%>
+<img src= "ReadmeSources/homescreenlistview.jpeg" width = 35% height = 35%> <img src= "ReadmeSources/settingsview.jpeg" width = 35% height = 35%>
 
 # Features
 
