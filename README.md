@@ -1,5 +1,5 @@
 # Todoeey
-A to-do app follow the courses by [Credo Academy](https://www.youtube.com/channel/UCwj8wWneM1JkNuM_HoJzb-g), with extra feature added myself like first responder textfield...etc. Fully built in Love & SwiftUI.
+An easy to use to-do app initialliy following the courses by [Credo Academy](https://www.youtube.com/channel/UCwj8wWneM1JkNuM_HoJzb-g), with extra feature added myself like first responder textfield...etc. Fully built in Love & SwiftUI.
 
 
 # Menu
